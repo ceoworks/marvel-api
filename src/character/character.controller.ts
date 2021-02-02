@@ -1,5 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { CharacterService } from './character.service';
+import { CharacterResponseDto } from './dto/character.dto';
 
 @Controller('characters')
 export class CharacterController {
@@ -11,9 +12,7 @@ export class CharacterController {
   }
 
   @Get(':id')
-  async getCharacter(
-    @Param() params,
-  ): Promise<{ id: number; name: string; description: string }> {
+  async getCharacter(@Param() params): Promise<CharacterResponseDto> {
     return this.characterService.getCharacterInfo(params.id as string);
   }
 }
