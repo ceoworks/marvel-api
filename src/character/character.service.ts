@@ -1,8 +1,8 @@
-import { Model, Query } from 'mongoose';
+import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
-import { MarvelProxyService } from 'src/marvel-proxy/marvel-proxy.service';
 import { InjectModel } from '@nestjs/mongoose';
 import { Cache, CacheDocument } from './schemas/cache.schema';
+import { MarvelProxyService } from '../marvel-proxy/marvel-proxy.service';
 
 @Injectable()
 export class CharacterService {
